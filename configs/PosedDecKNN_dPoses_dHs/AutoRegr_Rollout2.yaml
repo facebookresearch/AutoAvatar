@@ -1,0 +1,37 @@
+name: PosedDecKNN_dPoses_dHs
+version: AutoRegr_Rollout2
+log_dir: logs
+data:
+  type: DFaust
+  raw_dataset_dir: DFaust
+  dataset_dir: DFaust
+  smooth_tag: poisson_v2
+  bin_path: DFaust/50002_v2.bin
+  subject: '50002'
+  cloth_type: v2
+  smpl_path: SMPL/basicmodel_m_lbs_10_207_0_v1.0.0.pkl
+  uv_info: SMPL/uv_info.npz
+  resample_idxs_path: SMPL/smpl_resample_idxs.npz
+  train_bin_path: DFaust/50002_v2_train.bin
+  interp_bin_path: DFaust/50002_v2_interp.bin
+  extrap_bin_path: DFaust/50002_v2_extrap.bin
+  separate_detail: False
+model:
+  stage: auto_regr
+  use_detail: False
+  n_batch_frames: 4
+  n_hist_frames: 3
+  n_H: 1
+  uv_size: 256
+  ob_vals: [-0.02, 0.08, 5]
+train:
+  lr: 0.00001
+  ckpt_step: 7500
+  check_val_every_n_epoch: 1
+  n_pts_scan: 1000
+  n_pts_scan_igr: 1000
+  n_pts_bbox_igr: 500
+  pts_igr_sigma: 0.1
+  lambda_igr: 1.0
+  lambda_o: 0.1
+  n_rollout: 2
