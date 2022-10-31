@@ -101,7 +101,7 @@ python setup.py develop
 
 ## Data Preprocess
 
-- Run "DFaust_generate.py" to preprocess data.
+- Run "DFaust_generate.py" to preprocess data. Note that this may take a long time due to the mesh simplification (the open3d API mesh_o3d.simplify_quadric_decimation() in simplify_scans())! Mesh simplification is to speed up data loading during training.
 
 ```bash
 cd AutoAvatar
