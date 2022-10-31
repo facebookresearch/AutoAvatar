@@ -57,7 +57,7 @@ mkdir DFaust
 
 ```bash
 cd <workspace_folder>
-git clone https://github.com/
+git clone https://github.com/facebookresearch/AutoAvatar.git
 ```
 
 - Now we should have the following folder structure:
@@ -73,7 +73,7 @@ git clone https://github.com/
     │           └── \<sequences_folders\>
     ├── SMPL
     |   └── \<SMPL_related_files\>
-    └── ImpDyn
+    └── AutoAvatar
 ```
 
 
@@ -82,9 +82,9 @@ git clone https://github.com/
 - Install [Anaconda](https://www.anaconda.com/) or [Miniconda](https://docs.conda.io/en/latest/miniconda.html). Then run the setup script.
 
 ```bash
-cd ImpDyn
-conda create -n impdyn python=3.8
-conda activate impdyn
+cd AutoAvatar
+conda create -n AutoAvatar python=3.8
+conda activate AutoAvatar
 bash setup.sh
 ```
 
@@ -104,8 +104,8 @@ python setup.py develop
 - Run "DFaust_generate.py" to preprocess data.
 
 ```bash
-cd ImpDyn
-export PYTHONPATH=<workspace_folder>/ImpDyn
+cd AutoAvatar
+export PYTHONPATH=<workspace_folder>/AutoAvatar
 python data/DFaust_generate.py --ws_dir <workspace_folder>
 ```
 
@@ -115,8 +115,8 @@ python data/DFaust_generate.py --ws_dir <workspace_folder>
 - Run "implicit_train_dfaust.py" to train the model.
 
 ```bash
-cd ImpDyn
-export PYTHONPATH=<workspace_folder>/ImpDyn
+cd AutoAvatar
+export PYTHONPATH=<workspace_folder>/AutoAvatar
 python exps/PosedDecKNN_dPoses_dHs/implicit_train_dfaust.py --ws_dir <workspace_folder> --configs_path configs/PosedDecKNN_dPoses_dHs/AutoRegr.yaml --configs_path_rollout configs/PosedDecKNN_dPoses_dHs/AutoRegr_Rollout2.yaml
 ```
 
@@ -126,8 +126,8 @@ python exps/PosedDecKNN_dPoses_dHs/implicit_train_dfaust.py --ws_dir <workspace_
 - Run "implicit_eval_dfaust.py" to test the model.
 
 ```bash
-cd ImpDyn
-export PYTHONPATH=<workspace_folder>/ImpDyn
+cd AutoAvatar
+export PYTHONPATH=<workspace_folder>/AutoAvatar
 python exps/PosedDecKNN_dPoses_dHs/implicit_eval_dfaust.py --ws_dir <workspace_folder> --ckpt_dir <checkpoint_folder>
 ```
 
