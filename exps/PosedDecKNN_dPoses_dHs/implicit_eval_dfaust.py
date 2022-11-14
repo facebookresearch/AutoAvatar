@@ -78,7 +78,7 @@ elif data_mode == 'train':
     seqs_list = [4]
 
 if not os.path.exists(os.path.join(args['log_dir'], log_name)):
-    os.mkdir(os.path.join(args['log_dir'], log_name))
+    os.makedirs(os.path.join(args['log_dir'], log_name))
 for seq_idx in seqs_list:
     log_dir = os.path.join(args['log_dir'], log_name, 'seq_%03d' % seq_idx)
     if not os.path.exists(log_dir):

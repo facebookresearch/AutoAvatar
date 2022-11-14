@@ -53,6 +53,8 @@ mkdir DFaust
 
 - Download SMPL model from [link](https://smpl.is.tue.mpg.de/). Download SMPL meta data from [link](https://drive.google.com/drive/folders/1ZhS_0FFJ38Mj9pZrkr5HUTurCaofjLSk?usp=sharing). Move SMPL related files "basicmodel_m_lbs_10_207_0_v1.0.0.pkl", "basicModel_f_lbs_10_207_0_v1.0.0.pkl", "uv_info.npz", and "smpl_resample_idxs.npz" into "\<workspace_folder\>/SMPL".
 
+- Set up [AMASS](https://github.com/nghorbani/amass#installation) for DFaust data preprocessing. More specifically, download [SMPL+H (smplh.tar.xz)](https://mano.is.tue.mpg.de/) and unzip to "\<workspace_folder\>/SMPL/smplh". Download [DMPLs (dmpls.tar.xz)](https://smpl.is.tue.mpg.de/) and unzip to "\<workspace_folder\>/SMPL/dmpls".
+
 - clone this repo to "\<workspace_folder\>".
 
 ```bash
@@ -72,7 +74,15 @@ git clone https://github.com/facebookresearch/AutoAvatar.git
     │       └── 50002
     │           └── \<sequences_folders\>
     ├── SMPL
-    |   └── \<SMPL_related_files\>
+    │   ├── smplh
+    │   │   ├── female
+    │   │   ├── male
+    │   │   └── neutral
+    │   ├── dmpls
+    │   │   ├── female
+    │   │   ├── male
+    │   │   └── neutral
+    |   └── \<other_SMPL_related_files\>
     └── AutoAvatar
 ```
 

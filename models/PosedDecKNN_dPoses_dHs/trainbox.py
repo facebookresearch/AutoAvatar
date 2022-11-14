@@ -32,7 +32,7 @@ class Implicit_Trainbox(pl.LightningModule):
         self.pose_model = pose_model
 
         if not os.path.exists(log_dir):
-            os.mkdir(log_dir)
+            os.makedirs(log_dir)
         if not os.path.exists(os.path.join(log_dir, 'ckpt')):
             os.mkdir(os.path.join(log_dir, 'ckpt'))
         if not os.path.exists(os.path.join(log_dir, 'net_def')):
